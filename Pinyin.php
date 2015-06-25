@@ -6958,16 +6958,15 @@ class Pinyin
     /**
      * 字符串拆分成单个字的数组
      * @param $string
-     * @param string $encoding
      * @return array
      */
-    private static function mbStringToArray($string, $encoding)
+    private static function mbStringToArray($string)
     {
-        $stop   = mb_strlen($string, $encoding);
+        $stop   = mb_strlen($string, 'utf-8');
         $result = array();
 
         for ($idx = 0; $idx < $stop; $idx++) {
-            $result[] = mb_substr($string, $idx, 1, $encoding);
+            $result[] = mb_substr($string, $idx, 1, 'utf-8');
         }
 
         return $result;
@@ -6980,7 +6979,7 @@ class Pinyin
      */
     private static function chineseToPinyin($string, $encoding)
     {
-        $words          = self::mbStringToArray($string, $encoding);
+        $words          = self::mbStringToArray(mb_convert_encoding($string,'utf-8', $encoding));
         self::$string   = $string;
         self::$encoding = $encoding;
         self::$pinyin   = '';
@@ -7001,7 +7000,7 @@ class Pinyin
      * @param string $encoding
      * @return string
      */
-    public static function getPinyin($string, $encoding = 'UTF-8')
+    public static function getPinyin($string, $encoding = 'utf-8')
     {
         if ($string != self::$string || $encoding != self::$encoding) {
             self::chineseToPinyin($string, $encoding);
@@ -7015,7 +7014,7 @@ class Pinyin
      * @param string $encoding
      * @return string
      */
-    public static function getShortPinyin($string, $encoding = 'UTF-8')
+    public static function getShortPinyin($string, $encoding = 'utf-8')
     {
         if ($string != self::$string || $encoding != self::$encoding) {
             self::chineseToPinyin($string, $encoding);
