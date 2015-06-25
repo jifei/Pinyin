@@ -4,7 +4,7 @@
 
 # 例子
 <code>
-include_once 'Pinyin.php';  
-echo Pinyin::getPinyin("早上好");//获取拼音
-echo Pinyin::getShortPinyin("早上好");//获取拼音缩写
+include_once 'Pinyin.php';    
+echo Pinyin::getPinyin("早上好");//获取拼音  
+echo Pinyin::getShortPinyin("早上好");//获取拼音缩写  
 </code>
