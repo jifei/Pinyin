@@ -3,7 +3,8 @@
 单个汉字，一句话，中英文混合都完美支持。
 
 # 例子
-include_once 'Pinyin.php';
+<code>
+include_once 'Pinyin.php';  
 echo Pinyin::getPinyin("早上好");//获取拼音
 echo Pinyin::getShortPinyin("早上好");//获取拼音缩写
-
+</code>
