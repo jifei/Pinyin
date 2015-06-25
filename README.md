@@ -19,6 +19,6 @@ echo Pinyin::getShortPinyin("早上好");//获取拼音缩写
 ## 例子gbk版
 ```php
 include_once 'Pinyin.php';
-echo Pinyin::getPinyin("早上好",'gb2312');
-echo Pinyin::getShortPinyin("早上好",'gb2312');
+echo Pinyin::getPinyin("早上好",'gb2312');//获取拼音
+echo Pinyin::getShortPinyin("早上好",'gb2312');//获取拼音缩写
 ```
