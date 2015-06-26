@@ -6979,10 +6979,11 @@ class Pinyin
      */
     private static function chineseToPinyin($string, $encoding)
     {
-        $words          = self::mbStringToArray(mb_convert_encoding($string,'utf-8', $encoding));
-        self::$string   = $string;
-        self::$encoding = $encoding;
-        self::$pinyin   = '';
+        $words              = self::mbStringToArray(mb_convert_encoding($string, 'utf-8', $encoding));
+        self::$string       = $string;
+        self::$encoding     = $encoding;
+        self::$pinyin       = '';
+        self::$short_pinyin = '';
         foreach ($words as $v) {
             if (isset(self::$dic[$v])) {
                 $tmp = self::$dic[$v];
